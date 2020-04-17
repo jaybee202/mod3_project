@@ -86,18 +86,18 @@ Telecom Churn Dataset: 3333 rows x 22 columns
 
 ### Exploratory Data Analysis: 
 
-**Figure 1. 84.5% retained customers (churn = 0) vs 14.5%  lost customers (churn = 1)**  
+**Figure 1. 85.5% retained customers (churn = 0) vs 14.5%  lost customers (churn = 1)**  
 
 ![num_customers.png](https://github.com/jaybee202/mod3_project/blob/master/images/num_customers.png)
 
 <br/>
 
-**Figure 2: Lost customers have higher phone usage (median > 600 minutes)**
+**Figure 2: Lost customers have higher phone usage (majority > 600 minutes)**
 
 ![phone_usage.png](https://github.com/jaybee202/mod3_project/blob/master/images/phone_usage.png)
 <br/>
 
-**Figure 3: Lost customers have a higher phone bill (median > $65)**
+**Figure 3: Lost customers have a higher phone bill (majority > $60)**
 
 ![phone_bill.png](https://github.com/jaybee202/mod3_project/blob/master/images/phone_bill.png)
 <br/>
