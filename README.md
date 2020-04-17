@@ -1,4 +1,4 @@
-# Predicting Telecom Churn With AI
+# 
 
 
 ![coverphoto.png](https://github.com/jaybee202/mod3_project/blob/master/images/coverphoto.png)
@@ -9,31 +9,29 @@
 - /images - all images
 - /data - all data files pertaining to the Telecom Churn  data set and processed data files
 - /presentation - PowerPoint and pdf files of the final presentation
-- /project_kickoff - Onboarding project documents provided at the start of this project
+- /project_kickoff - onboarding project documents provided at the start of this project
 - /step01_data_cleaning_EDA 
   - /step01a - data assessment and cleaning
   - /step01b - exploratory data analysis 
 - /step02_train_test_split_ohe_and_ss 
   - /step02a - data splitting to test and train files
   - /step02b - feature engineering and scaling 
-- /step03_model_selection - data modeling with logistic, decision tree, random forrest, K-nearest neighbor, gradient boosting classifier
-- /step04_hyperparameter_tuning - Files used to tune our models to find the best parameters on our train data set
+- /step03_model_selection - data modeling with logistic, decision tree, random forrest, K-nearest neighbors, gradient boosting classifier
+- /step04_hyperparameter_tuning - files used to tune our models to find the best parameters on our train data set
 - /step05_format_test_data - a file for formating the test data so it matches our train data
 - /step06_fitting_test_data - a file for testing our models with the test data and providing evaluation metrics (confusion matrix, roc curve) for model comparisons
 
 ### Prompt:
-Customer churn, also known as customer turnover, is a major concern in the competitive telecom industry. With the abundance of attractive wireless plans provided by different telecom companies, SyriaTel has faced major challenges retaining their customers. Therefore, they have hired us to create a model that can assess which customers are at risk of canceling their plans “soon”. SyriaTel would like to detect these customers as early as possible to maintain long lasting relationships because when a customer leaves, the company might not recover from the cost of acquiring the customer. 
+Customer churn, also known as customer turnover, is a major concern in the competitive telecom industry. With the abundance of attractive wireless plans provided by different telecom companies, SyriaTel has faced major challenges retaining their customers. Therefore, they have hired us to create a model that can assess which customers are at risk of canceling their plans. SyriaTel would like to detect these customers as early as possible to maintain long lasting relationships.
 
 ### Goal:
 
 1.	Analyze data set to identify different feature trends between retained and lost customers
 2.	Build a binary classifier to predict whether a customer will cancel their phone plan with SyriaTel
 
-
-
 ### Results:
 
-- Default random forest and gradient boosting classifier were the top 2 models. 
+- Default random forest and gradient boosting classifier were the top 2 models
 
   ![roc_curve.png](https://github.com/jaybee202/mod3_project/blob/master/images/roc_curve.png)
 
@@ -44,13 +42,12 @@ Customer churn, also known as customer turnover, is a major concern in the compe
 ### Methodology:
 
 1.	Assess the data: check for null values and outliers
-2.	Feature engineer: create new features that will provide us with more information (one hot encoder was used)
-3.	Perform exploratory data analysis to pick up trends from the data
-4.	Split data into train and test files
-5.	Apply standard scaler to numeric data set
-6.	Fit the train data to different vanilla models (Logistic, KNN, Decision Trees, Random Forest, Gradient Boosting Classifier)
-7.	Utilize gridsearch to do hyperparameter tuning on train data set
-8.	Test the best performing models with test data and compare evaluation scores (focussed on precision)
+2.	Perform exploratory data analysis to find trends in the data
+3.	Split data into train and test files
+4.	Apply one hot encoder to categorical features and standard scaler to numeric features 
+5.	Fit the train data to different vanilla models (Logistic, KNN, Decision Trees, Random Forest, Gradient Boosting Classifier)
+6.	Utilize gridsearch to do hyperparameter tuning on train data set
+7.	Test the best performing models with test data and compare evaluation scores (with a focuss on precision)
 
 #### Data description: 
 
@@ -65,15 +62,13 @@ Telecom Churn Dataset: 3333 rows x 22 columns
     - Yes ('x1_yes'), if user has the international plan
     - No, if the user does not have the international plan
   - Voice_mail_plan:
-    - Yes ('x2_yes'), if user has the international plan
-    - No, if the user does not have the international plan
+    - Yes ('x2_yes'), if user has the voicemail plan
+    - No, if the user does not have the voicemail plan
 
 - Numerical features:
 
     - Account_length: number of days the user has this account
-        - similar distribution between maintain and lost customer 
     - Number_vmail_messages: the number of voicemail messages the user has
-        - majority (~72%) have 0 voicemails because most users do not have a voicemail plan
 
     **Phone usage** (eve - evening, intl - international)
 
@@ -91,23 +86,23 @@ Telecom Churn Dataset: 3333 rows x 22 columns
 
 ### Exploratory Data Analysis: 
 
-**Figure 1. 84.5% (0 - maintain customer) vs 14.5%  (1 - churn/lost customer) **  
+**Figure 1. 84.5% retained customers vs 14.5%  lost customers **  
 
-![num_customers.png](https://github.com/jaybee202/mod3_project/blob/master/images/num_cutomers.png)
+![num_customers.png](https://github.com/jaybee202/mod3_project/blob/master/images/num_customers.png)
 
 <br/>
 
-**Figure 2: Lost Customers have higher total minutes**
+**Figure 2: Lost customers have higher phone usage (median > 600 minutes)**
 
 ![phone_usage.png](https://github.com/jaybee202/mod3_project/blob/master/images/phone_usage.png)
 <br/>
 
-**Figure 3: Lost Customers have a higher cost**
+**Figure 3: Lost customers have a higher phone bill (median > $65) **
 
 ![phone_bill.png](https://github.com/jaybee202/mod3_project/blob/master/images/phone_bill.png)
 <br/>
 
-**Figure 4: More lost customers make over 4 customer service calls**
+**Figure 4: Lost customers are more likely to make over 4 customer service calls**
 
 ![customer_service_calls.png](https://github.com/jaybee202/mod3_project/blob/master/images/customer_service_calls.png)
 <br/>
